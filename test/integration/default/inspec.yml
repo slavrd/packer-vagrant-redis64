@@ -1,0 +1,7 @@
+---
+name: default
+title: Redis installation
+summary: Test suite for basic check of Redis installation
+version: 0.1.0
+supports:
+  - os-family: linux
