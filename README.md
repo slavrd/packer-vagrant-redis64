@@ -10,12 +10,12 @@ A packer project that creates a vagrant box for virtualbox provider with install
 
 For running the inspec test:
 
-* Ruby version 2.5.1 - it is recommended to use a Ruby versions manager like `rbenv`. To set up `rbenv` on MAC:
+* Ruby version 2.5.6 - it is recommended to use a Ruby versions manager like `rbenv`. To set up `rbenv` on MAC:
   * Install rbenv - run `brew install rbenv`
   * Initialize rbenv - add to `~/.bash_profile` line `eval "$(rbenv init -)"`
   * Run `source ~/.bash_profile`
-  * Install ruby 2.5.1 with rbenv - run `rbenv install 2.5.1` , check `rbenv versions`
-  * Set local ruby version for the project to 2.5.1 - run `rbenv local 2.5.1` , check `rbenv local`
+  * Install ruby 2.5.6 with rbenv - run `rbenv install 2.5.6` , check `rbenv versions`
+  * Set local ruby version for the project to 2.5.6 - run `rbenv local 2.5.6` , check `rbenv local`
 * Installed Ruby bundler - `gem install bundler`. If using `rbenv` run also `rbenv rehash`.
 * Install the required gems - `bundle install`
 
@@ -25,7 +25,7 @@ The packer template relies on several environment variables:
 
 * `VC_BOX_NAME` - The source box from which to build the resulting one. Can be a Vagrant cloud box (myUser/myBox) or a path to a locally stored box.
 * `VC_BOX_VER` - The version of the box (applicable when a Vagrant cloud box is used).
-* `PKR_REDIS_VER` - the version of redis to install. Set to `auto` for installing the latest version available in the apt repositories.
+* `PKR_REDIS_VER` - the apt version string of redis to install. Set to `auto` for installing the latest version available in the apt repositories.
 * `DST_VC_BOX` - the tag of the destination Vagrant Cloud box to upload the generated artifact.
 * `DST_VC_BOX_VER` - the version of the Vagrant Cloud box to which to upload.
 * `VAGRANT_CLOUD_TOKEN` -  the user token for Vagrant Cloud.
@@ -36,7 +36,7 @@ Script usage:
 
 `usage run.sh <redis_version> <source_box> <source_box_version> [<dst_vc_box> <dsc_vc_box_ver>]`
 
-`redis_version` - version of redis to install or 'auto'
+`redis_version` - apt version string of redis to install or 'auto'
 `source_box_name` - vagrant cloud box 'my-vc-user/my-box'
 `source_box_version` - version of the VC box or 'current'
 `dst_vc_box` - (optional) the vagrant cloud destination box
