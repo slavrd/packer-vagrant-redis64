@@ -1,4 +1,4 @@
-#!/usr/env/bin bash
+#!/usr/bin/env bash
 # Installs redis
 # useage: provision.sh [redis_version]
 
